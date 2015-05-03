@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Range</title>
+</head>
+<body>
+<h1>Range</h1>
+<script type="application/javascript;version=1.7">
+    function* range(start = 0, end = 10, step = (start < end ? 1 : -1)) {
+        for(let i = start; i !== end; i += step) {
+            yield i;
+        }
+    }
+</script>
+</body>
+</html>

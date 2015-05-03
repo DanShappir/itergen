@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Linked List with generator</title>
+</head>
+<body>
+<h1>Linked List with generator</h1>
+<script type="application/javascript;version=1.7">
+    function LinkedList() {
+    }
+    LinkedList.prototype = {
+        add(value) {
+            let prev = this._tail;
+            this._tail = {
+                value
+            };
+            if (prev) {
+                prev.next = this._tail;
+            } else {
+                this._head = this._tail;
+            }
+            return this;
+        },
+        *[Symbol.iterator]() {
+            for (let current = this._head; current; current = current.next) {
+                yield current.value;
+            }
+        }
+    };
+</script>
+</body>
+</html>

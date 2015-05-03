@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Linked List with proper iterator</title>
+</head>
+<body>
+<h1>Linked List with proper iterator</h1>
+<script type="application/javascript;version=1.7">
+    function LinkedList() {
+    }
+    LinkedList.prototype = {
+        add(value) {
+            let prev = this._tail;
+            this._tail = {
+                value
+            };
+            if (prev) {
+                prev.next = this._tail;
+            } else {
+                this._head = this._tail;
+            }
+            return this;
+        },
+        iter() {
+            let current = this._head;
+            return {
+                next: function () {
+                    if (!current) {
+                        return {
+                            done: true
+                        };
+                    }
+                    let value = current.value;
+                    current = current.next;
+                    return {
+                        value
+                    };
+                }
+            };
+        }
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Linked List</title>
+</head>
+<body>
+<h1>Linked List</h1>
+<script>
+    function LinkedList() {
+    }
+    LinkedList.prototype = {
+        add: function (value) {
+            var prev = this._tail;
+            this._tail = {
+                value: value
+            };
+            if (prev) {
+                prev.next = this._tail;
+            } else {
+                this._head = this._tail;
+            }
+            return this;
+        },
+        forEach: function (callback) {
+            for (var current = this._head; current; current = current.next) {
+                callback(current.value);
+            }
+        }
+    };
+</script>
+</body>
+</html>
