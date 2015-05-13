@@ -25,7 +25,7 @@
         [Symbol.iterator]() {
             let current = this._head;
             return {
-                next: function () {
+                next() {
                     if (!current) {
                         return {
                             done: true

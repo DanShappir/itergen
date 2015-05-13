@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Interrupting</title>
+</head>
+<body>
+<h1>Interrupting</h1>
+<script type="application/javascript;version=1.7">
+    function* gen() {
+        try {
+            var i = 0;
+            while (true) {
+                yield i++;
+            }
+        } catch (e) {
+            console.log('caught exception');
+        } finally {
+            console.log('exiting');
+        }
+    }
+</script>
+</body>
+</html>
