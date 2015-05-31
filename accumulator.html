@@ -2,15 +2,14 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Two Way yield</title>
+    <title>Accumulator</title>
 </head>
 <body>
-<h1>Two Way yield</h1>
+<h1>Accumulator</h1>
 <script type="application/javascript;version=1.7">
-    function* double(v) {
+    function* accumulator(sum = 0) {
         while (true) {
-            let r = yield v;
-            v = r + r;
+            sum += yield sum;
         }
     }
 </script>
