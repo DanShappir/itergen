@@ -11,7 +11,7 @@
     }
     LinkedList.prototype = {
         add(value) {
-            let prev = this._tail;
+            const prev = this._tail;
             this._tail = {
                 value
             };
@@ -31,7 +31,7 @@
                             done: true
                         };
                     }
-                    let {value} = current;
+                    const {value} = current;
                     current = current.next;
                     return {
                         value

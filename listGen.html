@@ -11,7 +11,7 @@
     }
     LinkedList.prototype = {
         add(value) {
-            let prev = this._tail;
+            const prev = this._tail;
             this._tail = {
                 value
             };
@@ -28,13 +28,6 @@
             }
         }
     };
-
-    let x = new LinkedList;
-    x.add(1).add(42).add('hi');
-
-    for (let i of x) {
-        console.log(i);
-    }
 </script>
 </body>
 </html>
